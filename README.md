@@ -1,74 +1,168 @@
-# Spam SMS Classifier
+# Spam SMS Classifier 
 
-This project implements and evaluates machine learning models to classify SMS messages as either 'spam' or 'ham' (not spam). The goal is to build an effective model that can accurately detect unwanted messages.
+This project is a Machine Learning-based web application that classifies SMS messages as either **Spam** or **Ham (Not Spam)** using Natural Language Processing (NLP) techniques and a Logistic Regression model.
 
-## Table of Contents
+The application was successfully deployed using Streamlit.
 
-1.  [Project Description](#project-description)
-2.  [Dataset](#dataset)
-3.  [Models Used](#models-used)
-4.  [Evaluation Metrics](#evaluation-metrics)
-5.  [Setup and Installation](#setup-and-installation)
-6.  [Usage](#usage)
-7.  [Deployment](#deployment)
+---
 
-## Project Description
+# Live Demo
 
-This notebook demonstrates the process of building a spam SMS classification system. It covers:
+The project is deployed on Streamlit and allows users to test SMS messages in real time through an interactive web interface.
 
-*   **Data Loading and Preprocessing:** Loading the SMS dataset, checking for class imbalance, and converting text data into numerical features using TF-IDF (Term Frequency-Inverse Document Frequency).
-*   **Model Training:** Training two common classification models: Multinomial Naive Bayes and Logistic Regression.
-*   **Model Evaluation:** Assessing model performance using metrics suitable for imbalanced datasets, such as Accuracy, Precision, Recall, F1-Score, and Confusion Matrix.
-*   **Model Comparison:** Comparing the performance of the trained models.
-*   **Model Export:** Saving the trained Logistic Regression model using `pickle`.
-*   **Dependency Management:** Generating a `requirements.txt` file for easy environment setup.
+---
 
-## Dataset
+# Project Features
 
-The dataset used is `sms.csv`, which contains SMS messages labeled as 'spam' or 'ham'.
+- SMS Spam Detection using Machine Learning
+- Text preprocessing using TF-IDF Vectorization
+- Logistic Regression Classification Model
+- Interactive Streamlit Web Application
+- Real-time Predictions
+- Clean and User-Friendly Interface
 
-## Models Used
+---
 
-Two machine learning models were implemented and evaluated:
+# Project Structure
 
-1.  **Multinomial Naive Bayes (MultinomialNB):** A probabilistic classifier well-suited for text classification tasks.
-2.  **Logistic Regression:** A linear model for binary classification, often used as a baseline and known for its interpretability.
+```bash
+Email_Classification/
+│
+├── app.py                         # Streamlit application
+├── Email_Classification.ipynb    # Model training notebook
+├── logistic_regression_model.pkl # Saved trained model
+├── tfidf_vectorizer.pkl          # Saved TF-IDF vectorizer
+├── requirements.txt              # Required libraries
+├── Email.csv                       # Dataset
+└── README.md                     # Project documentation
+├── images/demo             # demo of project
 
-## Evaluation Metrics
 
-Given the imbalanced nature of spam detection datasets (typically far more 'ham' messages than 'spam'), the following metrics were used for a comprehensive evaluation:
+```
 
-*   **Accuracy:** Overall correctness of the model.
-*   **Precision:** The proportion of positive identifications that were actually correct.
-*   **Recall:** The proportion of actual positives that were identified correctly.
-*   **F1-Score:** The harmonic mean of precision and recall, providing a balance between the two.
-*   **Confusion Matrix:** A table summarizing the performance of the classification model.
+---
 
-## Setup and Installation
+# Project Description
 
-To run this project, you'll need Python and the libraries listed in `requirements.txt`.
+This project demonstrates the complete workflow of building an NLP-based spam classifier system, including:
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/AhmedKamel200058/Email_Classification.git
-    cd Email_Classification
-    ```
+- Data loading and preprocessing
+- Text cleaning and TF-IDF feature extraction
+- Model training and evaluation
+- Performance comparison
+- Model serialization using Pickle
+- Web app deployment using Streamlit
 
-2.  **Create a virtual environment (recommended):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-    ```
+The goal is to accurately classify incoming SMS messages and identify unwanted spam messages.
 
-3.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+---
 
-## Usage
+# Dataset
 
-Once the environment is set up, you can run the Jupyter notebook `Email_Classification.ipynb` (or similar name) to see the full analysis, model training, and evaluation steps. 
+The dataset used in this project is:
 
-## Deployment
+- `Email.csv'
 
-The trained Logistic Regression model is saved as `logistic_regression_model.pkl`. This file can be loaded into a production environment for making predictions on new, unseen SMS messages. The `requirements.txt` file ensures that the necessary dependencies with compatible versions are installed in your deployment environment.
+It contains SMS messages labeled as:
+
+- `spam`
+- `ham`
+
+---
+
+# Models Used
+
+The following machine learning models were trained and evaluated:
+
+## 1. Multinomial Naive Bayes
+A probabilistic model commonly used in NLP and text classification tasks.
+
+## 2. Logistic Regression
+A linear classification model known for its simplicity and strong performance in binary classification problems.
+
+---
+
+# Evaluation Metrics
+
+Since spam datasets are usually imbalanced, multiple evaluation metrics were used:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+
+These metrics provide a better understanding of model performance beyond simple accuracy.
+
+---
+
+# Technologies Used
+
+- Python
+- Scikit-learn
+- Pandas
+- NumPy
+- Streamlit
+- Pickle
+- TF-IDF Vectorizer
+
+---
+
+# Setup and Installation
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/AhmedKamel200058/Email_Classification.git
+cd Email_Classification
+```
+
+---
+
+## 2 Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Run the Streamlit Application
+
+Use the following command to run the app locally:
+
+```bash
+streamlit run app.py
+```
+
+After running the command, Streamlit will automatically open the application in your browser.
+
+---
+
+# Deployment
+
+The project was deployed using Streamlit Community Cloud.
+
+The deployed application loads:
+
+- `logistic_regression_model.pkl`
+- `tfidf_vectorizer.pkl`
+
+to make real-time predictions on user-entered SMS messages.
+
+---
+
+
+# Application Preview
+
+The Streamlit application allows users to:
+
+- Enter an SMS message
+- Click the "Classify" button
+- Instantly receive a prediction:
+  - Spam 🚨
+  - Ham ✅
+  
+# Demo
+
+![Demo GIF](images/demo.gif)
