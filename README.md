@@ -9,7 +9,7 @@ The application was successfully deployed using Streamlit.
 # Live Demo
 
 The project is deployed on Streamlit and allows users to test SMS messages in real time through an interactive web interface.
-
+APP Link {https://emailclassificationn.streamlit.app/}
 ---
 
 # Project Features
